@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AlienDictionary {
 	
-	List<Word> dictionary;
+	List<WordEnhanced> dictionary;
 
 	public AlienDictionary() {
 		this.dictionary = new ArrayList<>();
@@ -13,7 +13,7 @@ public class AlienDictionary {
 	
 	public void addWord(String alienWord, String translation) {
 		boolean trovato = false;
-		for (Word w : dictionary) {
+		for (WordEnhanced w : dictionary) {
 			if(w.getAlienWord().equalsIgnoreCase(alienWord))
 			{
 				w.setTranslation(translation);
@@ -22,15 +22,17 @@ public class AlienDictionary {
 			}
 		}
 		if (trovato == false) {
-			dictionary.add(new Word(alienWord, translation));
+			List<String> nuovaTraduzione = new ArrayList<>();
+			nuovaTraduzione.add(translation);
+			dictionary.add(new WordEnhanced(alienWord, nuovaTraduzione));
 		}
 	}
 	
 	public String translateWord(String alienWord) {
-		for (Word w : dictionary) {
+		for (WordEnhanced w : dictionary) {
 			if(w.getAlienWord().equalsIgnoreCase(alienWord))
 			{
-				return w.getTranslation() ; 
+				return w.getTranslation().toString() ; 
 			}
 		}
 		return null;

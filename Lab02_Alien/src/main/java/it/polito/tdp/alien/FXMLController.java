@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 import it.polito.tdp.alien.AlienDictionary; 
-import it.polito.tdp.alien.Word;
+import it.polito.tdp.alien.WordEnhanced;
 
 
 import javafx.event.ActionEvent;
